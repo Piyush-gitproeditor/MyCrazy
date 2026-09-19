@@ -1,19 +1,4 @@
-"""
-Skill Ledger — Project Authenticity Scorer (v0)
 
-What this does:
-  Pulls commit history for a GitHub repo and computes a 0-100
-  "originality score" based on structural signals — no LLM needed yet.
-  This is Step 2-4 of the build plan: raw data -> features -> score.
-
-Setup:
-  1. pip install requests
-  2. Set your GitHub token as an environment variable (don't hardcode it):
-       export GITHUB_TOKEN="ghp_xxxxxxxxxxxx"      (Mac/Linux)
-       setx GITHUB_TOKEN "ghp_xxxxxxxxxxxx"          (Windows, new terminal after)
-  3. Run:  python authenticity_scorer.py <owner> <repo>
-     e.g.  python authenticity_scorer.py torvalds linux
-"""
 
 import os
 import sys
