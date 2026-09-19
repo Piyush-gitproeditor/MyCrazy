@@ -1,5 +1,3 @@
-
-
 import os
 import sys
 import statistics
@@ -110,7 +108,6 @@ def score(features: dict) -> float:
     s -= features["generic_message_ratio"] * 15  # lazy commit messages
 
     return round(max(0, min(100, s)), 1)
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
