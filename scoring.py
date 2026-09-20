@@ -1,21 +1,3 @@
-"""
-Skill Ledger — Scoring Engine (LIVE version)
-
-Difference from scoring_engine.py:
-  - Entries are loaded from ledger_entries.json instead of hardcoded.
-  - Certificate entries get their URL checked for reachability before
-    they're allowed to score anything.
-  - Project entries get their evidence_score computed live by calling
-    authenticity_scorer.py on the real repo — never typed in by hand.
-
-Requirements:
-  - authenticity_scorer.py must be in the same folder (this imports it).
-  - GITHUB_TOKEN must be set in your environment for the project scoring
-    step to work (same as authenticity_scorer.py needs on its own).
-
-Run:
-  python scoring_engine_live.py
-"""
 
 import json
 import requests
