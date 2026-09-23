@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skill Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-row">
+    <div>
+      <h1>Skill Ledger</h1>
+      <p class="tagline">A running, verified record of what you can actually do — not a single exam score.</p>
+    </div>
+    <a href="/profile" class="ghost-link">View verified profile &rarr;</a>
+  </div>
+</header>
+
+<main>
+  <section class="entry-panel">
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="project">Project</button>
+      <button class="tab" data-tab="certificate">Certificate</button>
+      <button class="tab" data-tab="achievement">Achievement</button>
+    </div>
+
+    <form id="form-project" class="entry-form active">
+      <label>Skill / domain
+        <input type="text" name="skill" placeholder="e.g. AI/ML" required>
+      </label>
+      <div class="row">
+        <label>GitHub owner
+          <input type="text" name="owner" placeholder="e.g. piyush-saini" required>
+        </label>
+        <label>Repo name
+          <input type="text" name="repo" placeholder="e.g. ai-mission-planner" required>
+        </label>
+      </div>
+      <label>Date completed
+        <input type="date" name="date" required>
+      </label>
+      <button type="submit">Score this project live</button>
+      <p class="hint">Pulls real commit history from GitHub and computes an originality score — nothing typed in by hand.</p>
+    </form>
+
+    <form id="form-certificate" class="entry-form">
+      <label>Skill / domain
+        <input type="text" name="skill" placeholder="e.g. AI/ML" required>
+      </label>
+      <label>Certificate name
+        <input type="text" name="name" placeholder="e.g. NPTEL Deep Learning">
+      </label>
+      <label>Verification URL
+        <input type="url" name="url" placeholder="https://verify.example.com/..." required>
+      </label>
+      <div class="row">
+        <label>Issuer tier
+          <select name="tier">
+            <option value="1">Tier 1 — recognized institution</option>
+            <option value="2">Tier 2 — established platform</option>
+            <option value="3">Tier 3 — unverified platform</option>
+          </select>
+        </label>
+        <label>Date earned
+          <input type="date" name="date" required>
+        </label>
+      </div>
+      <button type="submit">Verify link and add</button>
+      <p class="hint">The link is checked live. If it doesn't resolve, the entry scores zero regardless of tier.</p>
+    </form>
+
+    <form id="form-achievement" class="entry-form">
+      <label>Skill / domain
+        <input type="text" name="skill" placeholder="e.g. Public Speaking" required>
+      </label>
+      <label>Achievement
+        <input type="text" name="name" placeholder="e.g. State-Level Debate Championship" required>
+      </label>
+      <div class="row">
+        <label>Attestation
+          <select name="attestation">
+            <option value="institutional">Institutional — a school/organizer vouches</option>
+            <option value="self_reported">Self-reported — no third party yet</option>
+          </select>
+        </label>
+        <label>Date
+          <input type="date" name="date" required>
+        </label>
+      </div>
+      <button type="submit">Add achievement</button>
+      <p class="hint">Not auto-verified in this prototype — attestation level is self-declared.</p>
+    </form>
+
+    <p id="form-error" class="error" hidden></p>
+  </section>
+
+  <section class="ledger-panel">
+    <div class="ledger-header">
+      <h2>Your Ledger</h2>
+      <button id="reset-btn" class="ghost-btn">Clear all</button>
+    </div>
+    <div id="ledger-empty" class="empty-state">
+      No entries yet. Add a project, certificate, or achievement to start building your ledger.
+    </div>
+    <div id="ledger-skills"></div>
+  </section>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

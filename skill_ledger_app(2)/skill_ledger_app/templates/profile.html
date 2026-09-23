@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skill Ledger — Verified Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="profile-body">
+
+<header class="masthead">
+  <div class="masthead-row">
+    <div>
+      <h1>Verified Profile</h1>
+      <p class="tagline">Read-only. Every line here is either independently checked or clearly marked as not.</p>
+    </div>
+    <a href="/" class="ghost-link">&larr; Back to editor</a>
+  </div>
+</header>
+
+<main class="profile-main">
+  <section class="trust-banner">
+    <div class="trust-figure">
+      <span id="trust-percent" class="trust-percent">—</span>
+      <span class="trust-label">of this ledger is independently verifiable</span>
+    </div>
+    <p id="trust-detail" class="trust-detail"></p>
+  </section>
+
+  <div id="profile-empty" class="empty-state" hidden>
+    No entries yet. Add something from the editor to see it here.
+  </div>
+
+  <div id="profile-skills"></div>
+</main>
+
+<script src="{{ url_for('static', filename='profile.js') }}"></script>
+</body>
+</html>
