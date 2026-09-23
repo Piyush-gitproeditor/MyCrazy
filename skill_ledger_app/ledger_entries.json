@@ -1,34 +1,22 @@
 [
   {
-    "skill": "leadership and team effectiveness",
-    "type": "achievement",
-    "source": "IIT Roorkee",
-    "attestation": "institutional",
-    "date": "2026-07-13"
-  },
-  {
-    "skill": "AI",
+    "skill": "Claude Code",
     "type": "certificate",
-    "source": "Claude Code",
-    "url": "https://verify.skilljar.com/c/kkd8q6543euy",
+    "source": "https://verify.skilljar.com/c/kkd8q6543euy",
     "tier": 1,
-    "verified": true,
-    "date": "2026-09-07"
+    "date": "2025-06-15"
   },
   {
     "skill": "AI/ML",
     "type": "project",
-    "source": "https://github.com/Piyush-gitproeditor/cpp",
-    "evidence_score": 100,
-    "features": {
-      "is_fork": false,
-      "commit_count": 50,
-      "span_days": 58,
-      "avg_commit_size": 20.96,
-      "size_stdev": 17.865004897844276,
-      "largest_commit_share": 0.0648854961832061,
-      "generic_message_ratio": 0.0
-    },
-    "date": "2026-09-13"
+    "source": "https://github.com/Piyush-gitproeditor/DecodeLabs-internship",
+    "date": "2026-05-20"
+  },
+  {
+    "skill": "Leadership & Team effectiveness",
+    "type": "achievement",
+    "source": "NPTEL",
+    "attestation": "institutional",
+    "date": "2026-02-01"
   }
 ]
